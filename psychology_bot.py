@@ -4,12 +4,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import google.generativeai as genai
 
-# Konfiguracja klucza API z sekretów GitHub
 API_KEY = os.environ.get("GEMINI_API_KEY")
 genai.configure(api_key=API_KEY)
 
 def generate_psych_note():
-    # Używamy darmowego i szybkiego modelu flash
     model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt = """
